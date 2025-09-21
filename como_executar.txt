@@ -1,0 +1,190 @@
+podman build -t arctichusky/garrysmod-docker-arm64:0.1 . --format docker
+STEP 1/26: FROM docker.io/sonroyaalmerol/steamcmd-arm64:latest
+STEP 2/26: LABEL maintainer="ArcticHusky"
+--> e9030bca166b
+STEP 3/26: ENV USER steam
+--> c9fb57a94f2c
+STEP 4/26: ENV HOMEDIR "/home/${USER}"
+--> 8317c7b074fb
+STEP 5/26: ENV STEAMCMDDIR "${HOMEDIR}/steamcmd"
+--> f12e9cc2c4af
+STEP 6/26: COPY assets/update.txt ${HOMEDIR}/update.txt
+--> d5fee2c83d2e
+STEP 7/26: RUN ${STEAMCMDDIR}/steamcmd.sh +runscript ${HOMEDIR}/update.txt +quit
+/home/steam/steamcmd/steamcmd.sh: line 39: ulimit: open files: cannot modify limit: Operation not permitted
+Redirecting stderr to '/home/steam/Steam/logs/stderr.txt'
+Logging directory: '/home/steam/Steam/logs'
+[  0%] Checking for available updates...
+[----] Verifying installation...
+UpdateUI: skip show logo
+Steam Console Client (c) Valve Corporation - version 1757650979
+-- type 'quit' to exit --
+Loading Steam API...IPC function call IClientUtils::GetSteamRealm took too long: 97 msec
+OK
+@ShutdownOnFailedCommand 0
+"@ShutdownOnFailedCommand" = "0"
+@NoPromptForPassword 1
+"@NoPromptForPassword" = "1"
+
+Connecting anonymously to Steam Public...OK
+Waiting for client config...OK
+Waiting for user info...OK
+force_install_dir /home/steam/server
+Please use force_install_dir before logon!
+app_update 4020 validate
+ Update state (0x3) reconfiguring, progress: 0.00 (0 / 0)
+ Update state (0x11) preallocating, progress: 3.02 (206020966 / 6824412011)
+ Update state (0x61) downloading, progress: 1.01 (68678832 / 6824412011)
+ Update state (0x61) downloading, progress: 1.88 (127988929 / 6824412011)
+IPC function call IClientAppManager::GetUpdateInfo took too long: 52 msec
+IPC function call IClientAppManager::GetUpdateInfo took too long: 47 msec
+ Update state (0x61) downloading, progress: 2.55 (174010628 / 6824412011)
+ Update state (0x61) downloading, progress: 3.60 (245931367 / 6824412011)
+ Update state (0x61) downloading, progress: 4.87 (332179919 / 6824412011)
+ Update state (0x61) downloading, progress: 6.28 (428797963 / 6824412011)
+ Update state (0x61) downloading, progress: 7.80 (532542583 / 6824412011)
+ Update state (0x61) downloading, progress: 10.60 (723099545 / 6824412011)
+ Update state (0x61) downloading, progress: 12.46 (850347065 / 6824412011)
+ Update state (0x61) downloading, progress: 14.01 (956029890 / 6824412011)
+ Update state (0x61) downloading, progress: 15.54 (1060800504 / 6824412011)
+ Update state (0x61) downloading, progress: 17.02 (1161606372 / 6824412011)
+ Update state (0x61) downloading, progress: 18.16 (1239281708 / 6824412011)
+ Update state (0x61) downloading, progress: 19.51 (1331166064 / 6824412011)
+ Update state (0x61) downloading, progress: 20.57 (1403631284 / 6824412011)
+ Update state (0x61) downloading, progress: 21.61 (1474934452 / 6824412011)
+ Update state (0x61) downloading, progress: 22.77 (1553577652 / 6824412011)
+ Update state (0x61) downloading, progress: 24.04 (1640844372 / 6824412011)
+ Update state (0x61) downloading, progress: 25.37 (1731650204 / 6824412011)
+ Update state (0x61) downloading, progress: 26.44 (1804562657 / 6824412011)
+ Update state (0x61) downloading, progress: 27.73 (1892581266 / 6824412011)
+ Update state (0x61) downloading, progress: 28.92 (1973321618 / 6824412011)
+ Update state (0x61) downloading, progress: 30.53 (2083422098 / 6824412011)
+ Update state (0x61) downloading, progress: 32.10 (2190618464 / 6824412011)
+ Update state (0x61) downloading, progress: 33.67 (2297799997 / 6824412011)
+ Update state (0x61) downloading, progress: 35.32 (2410074223 / 6824412011)
+ Update state (0x61) downloading, progress: 36.25 (2473921597 / 6824412011)
+ Update state (0x61) downloading, progress: 37.37 (2550186051 / 6824412011)
+ Update state (0x61) downloading, progress: 38.43 (2622465952 / 6824412011)
+ Update state (0x61) downloading, progress: 39.51 (2696397936 / 6824412011)
+ Update state (0x61) downloading, progress: 40.60 (2770683788 / 6824412011)
+ Update state (0x61) downloading, progress: 42.61 (2907646381 / 6824412011)
+ Update state (0x61) downloading, progress: 44.47 (3034772650 / 6824412011)
+ Update state (0x61) downloading, progress: 45.88 (3130870734 / 6824412011)
+ Update state (0x61) downloading, progress: 47.37 (3233032495 / 6824412011)
+ Update state (0x61) downloading, progress: 48.57 (3314276211 / 6824412011)
+ Update state (0x61) downloading, progress: 49.98 (3411031530 / 6824412011)
+ Update state (0x61) downloading, progress: 52.19 (3561917988 / 6824412011)
+ Update state (0x61) downloading, progress: 54.45 (3715956594 / 6824412011)
+ Update state (0x61) downloading, progress: 57.94 (3954256880 / 6824412011)
+ Update state (0x61) downloading, progress: 61.42 (4191857049 / 6824412011)
+ Update state (0x61) downloading, progress: 64.33 (4390078873 / 6824412011)
+ Update state (0x61) downloading, progress: 66.58 (4543942174 / 6824412011)
+ Update state (0x61) downloading, progress: 67.97 (4638314014 / 6824412011)
+ Update state (0x61) downloading, progress: 69.80 (4763770163 / 6824412011)
+ Update state (0x61) downloading, progress: 71.04 (4848245979 / 6824412011)
+ Update state (0x61) downloading, progress: 72.51 (4948278434 / 6824412011)
+ Update state (0x61) downloading, progress: 74.72 (5099522916 / 6824412011)
+ Update state (0x61) downloading, progress: 76.14 (5196033325 / 6824412011)
+ Update state (0x61) downloading, progress: 77.55 (5292513645 / 6824412011)
+ Update state (0x61) downloading, progress: 81.02 (5528865847 / 6824412011)
+IPC function call IClientAppManager::GetUpdateInfo took too long: 42 msec
+ Update state (0x61) downloading, progress: 84.62 (5774950670 / 6824412011)
+ Update state (0x61) downloading, progress: 88.22 (6020609224 / 6824412011)
+ Update state (0x61) downloading, progress: 91.12 (6218733700 / 6824412011)
+ Update state (0x61) downloading, progress: 93.13 (6355358800 / 6824412011)
+ Update state (0x61) downloading, progress: 96.18 (6564039866 / 6824412011)
+ Update state (0x61) downloading, progress: 98.56 (6726367883 / 6824412011)
+ Update state (0x81) verifying update, progress: 1.18 (80228760 / 6824412011)
+ Update state (0x81) verifying update, progress: 10.14 (692065500 / 6824412011)
+ Update state (0x81) verifying update, progress: 19.21 (1310651019 / 6824412011)
+ Update state (0x81) verifying update, progress: 28.33 (1933135486 / 6824412011)
+IPC function call IClientAppManager::GetUpdateInfo took too long: 46 msec
+Success! App '4020' fully installed.
+quit
+Unloading Steam API...OK
+
+--> 508c8f6a9387
+STEP 8/26: RUN ${STEAMCMDDIR}/steamcmd.sh +login anonymous     +force_install_dir ${HOMEDIR}/temp     +app_update 232330 validate     +quit
+/home/steam/steamcmd/steamcmd.sh: line 39: ulimit: open files: cannot modify limit: Operation not permitted
+Redirecting stderr to '/home/steam/Steam/logs/stderr.txt'
+Logging directory: '/home/steam/Steam/logs'
+[  0%] Checking for available updates...
+[----] Verifying installation...
+UpdateUI: skip show logo
+Steam Console Client (c) Valve Corporation - version 1757650979
+-- type 'quit' to exit --
+Loading Steam API...IPC function call IClientUtils::GetSteamRealm took too long: 107 msec
+OK
+
+Connecting anonymously to Steam Public...OK
+Waiting for client config...OK
+Waiting for user info...OK
+Please use force_install_dir before logon!
+ Update state (0x3) reconfiguring, progress: 0.00 (0 / 0)
+ Update state (0x61) downloading, progress: 0.00 (11137 / 2379695392)
+IPC function call IClientAppManager::GetUpdateInfo took too long: 43 msec
+IPC function call IClientAppManager::GetUpdateInfo took too long: 52 msec
+ Update state (0x61) downloading, progress: 7.23 (172086157 / 2379695392)
+IPC function call IClientAppManager::GetUpdateInfo took too long: 47 msec
+IPC function call IClientAppManager::GetUpdateInfo took too long: 46 msec
+IPC function call IClientAppManager::GetUpdateInfo took too long: 49 msec
+ Update state (0x61) downloading, progress: 16.97 (403844626 / 2379695392)
+ Update state (0x61) downloading, progress: 28.71 (683110527 / 2379695392)
+IPC function call IClientAppManager::GetUpdateInfo took too long: 49 msec
+IPC function call IClientAppManager::GetUpdateInfo took too long: 42 msec
+ Update state (0x61) downloading, progress: 40.31 (959180094 / 2379695392)
+ Update state (0x61) downloading, progress: 52.09 (1239569101 / 2379695392)
+ Update state (0x61) downloading, progress: 59.91 (1425729624 / 2379695392)
+IPC function call IClientAppManager::GetUpdateInfo took too long: 49 msec
+ Update state (0x61) downloading, progress: 70.84 (1685788697 / 2379695392)
+ Update state (0x61) downloading, progress: 77.89 (1853442029 / 2379695392)
+ Update state (0x61) downloading, progress: 86.46 (2057485071 / 2379695392)
+ Update state (0x61) downloading, progress: 93.75 (2231083155 / 2379695392)
+ Update state (0x61) downloading, progress: 98.23 (2337576670 / 2379695392)
+ Update state (0x81) verifying update, progress: 11.47 (272883420 / 2379695392)
+ Update state (0x81) verifying update, progress: 37.65 (895862192 / 2379695392)
+ Update state (0x81) verifying update, progress: 63.70 (1515829461 / 2379695392)
+ Update state (0x81) verifying update, progress: 89.72 (2135073793 / 2379695392)
+IPC function call IClientAppManager::GetUpdateInfo took too long: 57 msec
+Success! App '232330' fully installed.
+Unloading Steam API...OK
+--> 986f4c46d895
+STEP 9/26: RUN mkdir ${HOMEDIR}/mounts && mv ${HOMEDIR}/temp/cstrike ${HOMEDIR}/mounts/cstrike
+--> 4c6279ef24ef
+STEP 10/26: RUN rm -rf ${HOMEDIR}/temp
+--> 789074e25083
+STEP 11/26: RUN echo '"mountcfg" {"cstrike" "/home/steam/mounts/cstrike"}' > ${HOMEDIR}/server/garrysmod/cfg/mount.cfg
+--> 708d27281a01
+STEP 12/26: RUN touch ${HOMEDIR}/server/garrysmod/sv.db
+--> d7c8f94b192e
+STEP 13/26: RUN mkdir -p ${HOMEDIR}/server/steam_cache/content && mkdir -p ${HOMEDIR}/server/garrysmod/cache/srcds
+--> daecdc75aa1a
+STEP 14/26: EXPOSE 27015
+--> 2344f8181dbf
+STEP 15/26: EXPOSE 27015/udp
+--> eb6c47e55bef
+STEP 16/26: EXPOSE 27005/udp
+--> 26ee2bba7277
+STEP 17/26: ENV MAXPLAYERS="16"
+--> 4f19a33613ca
+STEP 18/26: ENV GAMEMODE="sandbox"
+--> 4d2d8d1e7fe8
+STEP 19/26: ENV MAP="gm_construct"
+--> bdb7d96de6e5
+STEP 20/26: ENV PORT="27015"
+--> 1e5567f1de1a
+STEP 21/26: COPY --chown=steam:steam assets/start.sh ${HOMEDIR}/start.sh
+--> 11afb3ee6966
+STEP 22/26: RUN chmod +x ${HOMEDIR}/start.sh
+--> f52b4bc2b255
+STEP 23/26: COPY --chown=steam:steam assets/health.sh ${HOMEDIR}/health.sh
+--> a8976b95177d
+STEP 24/26: RUN chmod +x ${HOMEDIR}/health.sh
+--> e8f0e9fee622
+STEP 25/26: HEALTHCHECK --start-period=10s     CMD ${HOMEDIR}/health.sh
+--> 74e4ad093abe
+STEP 26/26: CMD ["/home/steam/start.sh"]
+COMMIT arctichusky/garrysmod-docker-arm64:0.1
+--> d8a980ba9609
+Successfully tagged localhost/arctichusky/garrysmod-docker-arm64:0.1
+d8a980ba960984c96cbe0f78e771cd30ac836689b35ca7fa054ac940dbba770f
