@@ -1,5 +1,7 @@
 FROM sonroyaalmerol/steamcmd-arm64:latest
 
+LABEL maintainer="ArcticHusky"
+
 ENV USER steam
 ENV HOMEDIR "/home/${USER}"
 ENV STEAMCMDDIR "${HOMEDIR}/steamcmd"
