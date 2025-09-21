@@ -1,4 +1,4 @@
-FROM sonroyaalmerol/steamcmd-arm64:latest
+FROM docker.io/sonroyaalmerol/steamcmd-arm64:latest
 
 LABEL maintainer="ArcticHusky"
 
