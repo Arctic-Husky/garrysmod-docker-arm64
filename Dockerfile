@@ -1,0 +1,51 @@
+FROM sonroyaalmerol/steamcmd-arm64:latest
+
+ENV USER steam
+ENV HOMEDIR "/home/${USER}"
+ENV STEAMCMDDIR "${HOMEDIR}/steamcmd"
+
+# DOWNLOAD GMOD SERVER
+COPY assets/update.txt ${HOMEDIR}/update.txt
+RUN ${STEAMCMDDIR}/steamcmd.sh +runscript ${HOMEDIR}/update.txt +quit
+
+# SETUP CSS CONTENT
+RUN ${STEAMCMDDIR}/steamcmd.sh +login anonymous \
+    +force_install_dir ${HOMEDIR}/temp \
+    +app_update 232330 validate \
+    +quit
+RUN mkdir ${HOMEDIR}/mounts && mv ${HOMEDIR}/temp/cstrike ${HOMEDIR}/mounts/cstrike
+RUN rm -rf ${HOMEDIR}/temp
+
+# SET GMOD MOUNT CONTENT
+RUN echo '"mountcfg" {"cstrike" "/home/steam/mounts/cstrike"}' > ${HOMEDIR}/server/garrysmod/cfg/mount.cfg
+
+# CREATE DATABASE FILE
+RUN touch ${HOMEDIR}/server/garrysmod/sv.db
+
+# CREATE CACHE FOLDERS
+RUN mkdir -p ${HOMEDIR}/server/steam_cache/content && mkdir -p ${HOMEDIR}/server/garrysmod/cache/srcds
+
+# PORT FORWARDING
+# https://developer.valvesoftware.com/wiki/Source_Dedicated_Server#Connectivity
+EXPOSE 27015
+EXPOSE 27015/udp
+EXPOSE 27005/udp
+
+# SET ENVIRONMENT VARIABLES
+ENV MAXPLAYERS="16"
+ENV GAMEMODE="sandbox"
+ENV MAP="gm_construct"
+ENV PORT="27015"
+
+# ADD START SCRIPT
+COPY --chown=steam:steam assets/start.sh ${HOMEDIR}/start.sh
+RUN chmod +x ${HOMEDIR}/start.sh
+
+# CREATE HEALTH CHECK
+COPY --chown=steam:steam assets/health.sh ${HOMEDIR}/health.sh
+RUN chmod +x ${HOMEDIR}/health.sh
+HEALTHCHECK --start-period=10s \
+    CMD ${HOMEDIR}/health.sh
+
+# START THE SERVER
+CMD ["/home/steam/start.sh"]
