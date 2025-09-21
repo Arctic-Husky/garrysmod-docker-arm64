@@ -11,8 +11,8 @@ COPY assets/update.txt ${HOMEDIR}/update.txt
 RUN ${STEAMCMDDIR}/steamcmd.sh +runscript ${HOMEDIR}/update.txt +quit
 
 # SETUP CSS CONTENT
-RUN ${STEAMCMDDIR}/steamcmd.sh +login anonymous \
-    +force_install_dir ${HOMEDIR}/temp \
+RUN ${STEAMCMDDIR}/steamcmd.sh +force_install_dir ${HOMEDIR}/temp \
+    +login anonymous \
     +app_update 232330 validate \
     +quit
 RUN mkdir ${HOMEDIR}/mounts && mv ${HOMEDIR}/temp/cstrike ${HOMEDIR}/mounts/cstrike
