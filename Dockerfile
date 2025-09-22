@@ -1,6 +1,6 @@
 FROM docker.io/sonroyaalmerol/steamcmd-arm64:latest
 
-LABEL maintainer="ArcticHusky"
+LABEL maintainer="caiofonsecaprofissional@gmail.com"
 
 ENV USER steam
 ENV HOMEDIR "/home/${USER}"
