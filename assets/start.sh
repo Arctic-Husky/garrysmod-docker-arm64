@@ -26,7 +26,7 @@ fi
 # START THE SERVER
 echo "Starting server on ${MODE} mode..."
 
-exec "/home/steam/server/srcds_run_x64" \
+exec "/home/steam/server/srcds_run" \
     -game garrysmod \
     -binary /home/steam/server/srcds_box64_wrapper \
     -ip 0.0.0.0 \
