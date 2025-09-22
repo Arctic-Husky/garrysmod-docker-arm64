@@ -49,5 +49,9 @@ RUN chmod +x ${HOMEDIR}/health.sh
 HEALTHCHECK --start-period=10s \
     CMD ${HOMEDIR}/health.sh
 
+# ADD WRAPPER SCRIPT
+COPY --chown=steam:steam assets/srcds_box64_wrapper ${HOMEDIR}/server/srcds_box64_wrapper
+RUN chmod +x ${HOMEDIR}/server/srcds_box64_wrapper
+
 # START THE SERVER
 CMD ["/home/steam/start.sh"]

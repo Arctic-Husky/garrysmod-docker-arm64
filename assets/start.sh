@@ -26,8 +26,9 @@ fi
 # START THE SERVER
 echo "Starting server on ${MODE} mode..."
 
-exec "/usr/local/bin/box${BOX_VERSION}" "/home/steam/server/srcds_run" \
+exec "/home/steam/server/srcds_run" \
     -game garrysmod \
+    -binary /home/steam/server/srcds_box64_wrapper \
     -norestart \
     -strictportbind \
     -autoupdate \

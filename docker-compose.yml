@@ -16,7 +16,7 @@ services:
       - MAP=${MAP}
       - MAXPLAYERS=${MAXPLAYERS}
       - PORT=${PORT}
-      - NAME=${NAME} 
+      - NAME=${NAME}
       - GSLT=${GSLT}
       - PRODUCTION=${PRODUCTION}
       - ARM64_DEVICE=${ARM64_DEVICE}
