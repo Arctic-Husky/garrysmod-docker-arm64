@@ -1,2 +1,2 @@
 #!/bin/sh
-exec /usr/local/bin/box64 "/home/steam/server/srcds_linux" "$@"
+exec /usr/local/bin/box86 "/home/steam/server/srcds_linux" "$@"
