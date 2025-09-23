@@ -2,20 +2,6 @@ FROM docker.io/sonroyaalmerol/steamcmd-arm64:latest
 
 LABEL maintainer="caiofonsecaprofissional@gmail.com"
 
-USER root
-
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    libc6:i386 lsb-core \
-    lib32z1 \
-    ia32-libs \
-    && apt install build-essential
-
-USER steam
-
-ENV USER steam
-ENV HOMEDIR "/home/${USER}"
-ENV STEAMCMDDIR "${HOMEDIR}/steamcmd"
-
 # DOWNLOAD GMOD SERVER
 COPY assets/update.txt ${HOMEDIR}/update.txt
 RUN ${STEAMCMDDIR}/steamcmd.sh +runscript ${HOMEDIR}/update.txt +quit
