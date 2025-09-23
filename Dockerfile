@@ -4,7 +4,7 @@ LABEL maintainer="caiofonsecaprofissional@gmail.com"
 
 USER root
 
-RUN sudo apt-get update && apt-get install -y --no-install-recommends \
+RUN apt-get update && apt-get install -y --no-install-recommends \
     libc6:i386 lsb-core \
     lib32z1 \
     ia32-libs \
