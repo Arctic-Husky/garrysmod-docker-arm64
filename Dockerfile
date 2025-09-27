@@ -4,7 +4,11 @@ LABEL maintainer="caiofonsecaprofissional@gmail.com"
 
 USER root
 
-RUN apt-get install -y --no-install-recommends --no-install-suggests netstat
+RUN apt-get update \
+  && DEBIAN_FRONTEND=noninteractive apt-get install -y \
+    net-tools \
+  && apt-get clean \
+  && rm -rf /var/lib/apt/lists/*
 
 USER steam
 
