@@ -11,7 +11,6 @@ services:
       - "27015:27015"
       - "27015:27015/udp"
     environment:
-      - ARGS=""
       - GAMEMODE=${GAMEMODE}
       - MAP=${MAP}
       - MAXPLAYERS=${MAXPLAYERS}
@@ -20,8 +19,6 @@ services:
       - GSLT=${GSLT}
       - PRODUCTION=${PRODUCTION}
       - ARM64_DEVICE=${ARM64_DEVICE}
-      # - AUTHKEY=
-      # - GM_CLIENTPORT=27005 ??
     volumes:
       - /mnt/vol/garrysmod/breach-brasil/addons:/home/steam/server/garrysmod/addons
       - /mnt/vol/garrysmod/breach-brasil/cfg:/home/steam/server/garrysmod/cfg
@@ -32,3 +29,6 @@ services:
       - /mnt/vol/garrysmod/breach-brasil/lua:/home/steam/server/garrysmod/lua
       - /mnt/vol/garrysmod/breach-brasil/maps:/home/steam/server/garrysmod/maps
       - /mnt/vol/garrysmod/breach-brasil/sv.db:/home/steam/server/garrysmod/sv.db
+    command: [
+      "/bin/bash", "/home/steam/start.sh"
+    ]
