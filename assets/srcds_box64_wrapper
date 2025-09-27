@@ -2,4 +2,4 @@
 
 export LD_LIBRARY_PATH=".:bin/linux64:$LD_LIBRARY_PATH"
 
-exec box64 "/home/steam/server/bin/linux64/srcds" "$@"
+exec box64 ./bin/linux64/srcds "$@"
