@@ -21,7 +21,6 @@ services:
       - PRODUCTION=${PRODUCTION}
       - ARM64_DEVICE=${ARM64_DEVICE}
       - BOX_VERSION=${BOX_VERSION}
-      # - LD_LIBRARY_PATH="/usr/lib/box64-x86_64-linux-gnu"
       # - AUTHKEY=
       # - GM_CLIENTPORT=27005 ??
     volumes:

@@ -1,5 +1,5 @@
 #!/bin/sh
 
-export LD_LIBRARY_PATH=".:bin/linux64:$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH=".:/home/steam/steamcmd/linux64/:/home/steam/server/linux64/:/home/steam/mounts/cstrike/bin/linux64/:bin/linux64:$LD_LIBRARY_PATH"
 
-exec box64 ./bin/linux64/srcds "$@"
+exec box64 srcds "$@"
