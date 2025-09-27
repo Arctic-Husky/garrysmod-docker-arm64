@@ -2,6 +2,12 @@ FROM docker.io/sonroyaalmerol/steamcmd-arm64:latest
 
 LABEL maintainer="caiofonsecaprofissional@gmail.com"
 
+USER root
+
+RUN apt-get install -y --no-install-recommends --no-install-suggests netstat
+
+USER steam
+
 # DOWNLOAD GMOD SERVER
 COPY assets/update.txt ${HOMEDIR}/update.txt
 RUN ${STEAMCMDDIR}/steamcmd.sh +runscript ${HOMEDIR}/update.txt +quit
