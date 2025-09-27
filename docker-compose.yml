@@ -20,7 +20,6 @@ services:
       - GSLT=${GSLT}
       - PRODUCTION=${PRODUCTION}
       - ARM64_DEVICE=${ARM64_DEVICE}
-      - BOX_VERSION=${BOX_VERSION}
       # - AUTHKEY=
       # - GM_CLIENTPORT=27005 ??
     volumes:
