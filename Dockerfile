@@ -4,8 +4,26 @@ LABEL maintainer="caiofonsecaprofissional@gmail.com"
 
 USER root
 
-RUN apt-get update \
+RUN dpkg --add-architecture i386 && apt-get update \
   && DEBIAN_FRONTEND=noninteractive apt-get install -y \
+    wget \
+    ca-certificates \
+    tar \
+    gcc \
+    g++ \
+    lib32gcc1 \
+    libgcc1 \
+    libcurl4-gnutls-dev:i386 \
+    libssl1.1 \
+    libcurl4:i386 \
+    libtinfo5 \
+    lib32z1 \
+    lib32stdc++6 \
+    libncurses5:i386 \
+    libcurl3-gnutls:i386 \
+    gdb \
+    libsdl1.2debian \
+    libfontconfig \
     net-tools \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
