@@ -35,22 +35,22 @@ RUN ${STEAMCMDDIR}/steamcmd.sh +runscript ${HOMEDIR}/update.txt +quit
 #     && mkdir -p /home/steam/.steam/sdk64 \
 #     && cp -v /home/steam/steamcmd/linux64/steamclient.so /home/steam/.steam/sdk64/steamclient.so
 
-# # SETUP CSS CONTENT
-# RUN ${STEAMCMDDIR}/steamcmd.sh +force_install_dir ${HOMEDIR}/temp \
-#     +login anonymous \
-#     +app_update 232330 validate \
-#     +quit
-# RUN mkdir ${HOMEDIR}/mounts && mv ${HOMEDIR}/temp/cstrike ${HOMEDIR}/mounts/cstrike
-# RUN rm -rf ${HOMEDIR}/temp
+# SETUP CSS CONTENT
+RUN ${STEAMCMDDIR}/steamcmd.sh +force_install_dir ${HOMEDIR}/temp \
+    +login anonymous \
+    +app_update 232330 validate \
+    +quit
+RUN mkdir ${HOMEDIR}/mounts && mv ${HOMEDIR}/temp/cstrike ${HOMEDIR}/mounts/cstrike
+RUN rm -rf ${HOMEDIR}/temp
 
-# # SET GMOD MOUNT CONTENT
-# RUN echo '"mountcfg" {"cstrike" "/home/steam/mounts/cstrike"}' > ${HOMEDIR}/server/garrysmod/cfg/mount.cfg
+# SET GMOD MOUNT CONTENT
+RUN echo '"mountcfg" {"cstrike" "/home/steam/mounts/cstrike"}' > ${HOMEDIR}/server/garrysmod/cfg/mount.cfg
 
-# # CREATE DATABASE FILE
-# RUN touch ${HOMEDIR}/server/garrysmod/sv.db
+# CREATE DATABASE FILE
+RUN touch ${HOMEDIR}/server/garrysmod/sv.db
 
-# # CREATE CACHE FOLDERS
-# RUN mkdir -p ${HOMEDIR}/server/steam_cache/content && mkdir -p ${HOMEDIR}/server/garrysmod/cache/srcds
+# CREATE CACHE FOLDERS
+RUN mkdir -p ${HOMEDIR}/server/steam_cache/content && mkdir -p ${HOMEDIR}/server/garrysmod/cache/srcds
 
 # PORT FORWARDING
 # https://developer.valvesoftware.com/wiki/Source_Dedicated_Server#Connectivity
