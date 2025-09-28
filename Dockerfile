@@ -4,9 +4,12 @@ LABEL maintainer="caiofonsecaprofissional@gmail.com"
 
 USER root
 
-RUN apt-get update \
+RUN add-apt-repository multiverse \
+  && dpkg --add-architecture i386 \
+  && apt-get update \
   && DEBIAN_FRONTEND=noninteractive apt-get install -y \
     net-tools \
+    lib32gcc-s1 \
     lib32stdc++6 \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
