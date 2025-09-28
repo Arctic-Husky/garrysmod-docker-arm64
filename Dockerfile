@@ -14,7 +14,7 @@ RUN dpkg --add-architecture i386 && apt-get update \
     libgcc1 \
     libssl3 \
     libtinfo5 \
-    lib32z1 \
+    libbz2-1.0:i386 \
     gdb \
     libsdl1.2debian \
     libfontconfig \
