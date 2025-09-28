@@ -16,11 +16,11 @@ USER steam
 COPY assets/update.txt ${HOMEDIR}/update.txt
 RUN ${STEAMCMDDIR}/steamcmd.sh +runscript ${HOMEDIR}/update.txt +quit
 
-# SETUP BINARIES FOR x32 and x64 bits
-RUN mkdir -p /home/steam/.steam/sdk32 \
-    && cp -v /home/steam/steamcmd/linux32/steamclient.so /home/steam/.steam/sdk32/steamclient.so \
-    && mkdir -p /home/steam/.steam/sdk64 \
-    && cp -v /home/steam/steamcmd/linux64/steamclient.so /home/steam/.steam/sdk64/steamclient.so
+# # SETUP BINARIES FOR x32 and x64 bits
+# RUN mkdir -p /home/steam/.steam/sdk32 \
+#     && cp -v /home/steam/steamcmd/linux32/steamclient.so /home/steam/.steam/sdk32/steamclient.so \
+#     && mkdir -p /home/steam/.steam/sdk64 \
+#     && cp -v /home/steam/steamcmd/linux64/steamclient.so /home/steam/.steam/sdk64/steamclient.so
 
 # # SETUP CSS CONTENT
 # RUN ${STEAMCMDDIR}/steamcmd.sh +force_install_dir ${HOMEDIR}/temp \
