@@ -4,7 +4,9 @@ LABEL maintainer="caiofonsecaprofissional@gmail.com"
 
 USER root
 
-RUN add-apt-repository multiverse \
+RUN apt-get update \
+  && apt install software-properties-common \
+  && apt-add-repository non-free \
   && dpkg --add-architecture i386 \
   && apt-get update \
   && DEBIAN_FRONTEND=noninteractive apt-get install -y \
