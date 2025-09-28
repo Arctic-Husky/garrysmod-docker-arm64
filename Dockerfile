@@ -27,11 +27,11 @@ RUN ${STEAMCMDDIR}/steamcmd.sh +runscript ${HOMEDIR}/update.txt +quit
 # # SET GMOD MOUNT CONTENT
 # RUN echo '"mountcfg" {"cstrike" "/home/steam/mounts/cstrike"}' > ${HOMEDIR}/server/garrysmod/cfg/mount.cfg
 
-# CREATE DATABASE FILE
-RUN touch ${HOMEDIR}/server/garrysmod/sv.db
+# # CREATE DATABASE FILE
+# RUN touch ${HOMEDIR}/server/garrysmod/sv.db
 
-# CREATE CACHE FOLDERS
-RUN mkdir -p ${HOMEDIR}/server/steam_cache/content && mkdir -p ${HOMEDIR}/server/garrysmod/cache/srcds
+# # CREATE CACHE FOLDERS
+# RUN mkdir -p ${HOMEDIR}/server/steam_cache/content && mkdir -p ${HOMEDIR}/server/garrysmod/cache/srcds
 
 # PORT FORWARDING
 # https://developer.valvesoftware.com/wiki/Source_Dedicated_Server#Connectivity
