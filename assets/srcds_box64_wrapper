@@ -1,6 +1,6 @@
 #!/bin/sh
 
-export LD_LIBRARY_PATH=".:/home/steam/.steam/sdk64/:/home/steam/steamcmd/linux64/:bin/linux64:$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH="/home/steam/steamcmd/linux64/:bin/linux64:$LD_LIBRARY_PATH"
 
 echo "EXECUTANDO SRCDS PELO WRAPPER"
 
