@@ -12,7 +12,7 @@ RUN dpkg --add-architecture i386 && apt-get update \
     gcc \
     g++ \
     libgcc1 \
-    libssl1.1 \
+    libssl3 \
     libtinfo5 \
     lib32z1 \
     gdb \
