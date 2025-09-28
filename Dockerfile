@@ -5,20 +5,12 @@ LABEL maintainer="caiofonsecaprofissional@gmail.com"
 USER root
 
 RUN apt-get update \
-  && apt install software-properties-common \
-  && apt-add-repository non-free \
-  && dpkg --add-architecture i386 \
-  && apt-get update \
   && DEBIAN_FRONTEND=noninteractive apt-get install -y \
     net-tools \
-    lib32gcc-s1 \
-    lib32stdc++6 \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
 USER steam
-
-RUN ulimit -n 2048
 
 # DOWNLOAD GMOD SERVER
 COPY assets/update.txt ${HOMEDIR}/update.txt
