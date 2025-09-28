@@ -42,6 +42,7 @@ exec "/home/steam/server/srcds_run_x64" \
     -port "${PORT:-27015}" \
     -maxplayers "${MAXPLAYERS:-12}" \
     +gamemode "${GAMEMODE:-sandbox}" \
+    +sv_lan 0 \
     +map "${MAP:-gm_construct}" \
     "${BASE_ARGS[@]}" \
     "${ARGS[@]}"
