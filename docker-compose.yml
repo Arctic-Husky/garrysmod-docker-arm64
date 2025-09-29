@@ -19,16 +19,14 @@ services:
       - GSLT=${GSLT}
       - PRODUCTION=${PRODUCTION}
       - ARM64_DEVICE=${ARM64_DEVICE}
-    volumes:
-      - /mnt/vol/garrysmod/breach-brasil/addons:/home/steam/server/garrysmod/addons
-      - /mnt/vol/garrysmod/breach-brasil/cfg:/home/steam/server/garrysmod/cfg
-      - /mnt/vol/garrysmod/breach-brasil/cfg/mount.cfg:/home/steam/server/garrysmod/cfg/mount.cfg
-      - /mnt/vol/garrysmod/breach-brasil/cfg/server.cfg:/home/steam/server/garrysmod/cfg/server.cfg
-      - /mnt/vol/garrysmod/breach-brasil/data:/home/steam/server/garrysmod/data
-      - /mnt/vol/garrysmod/breach-brasil/gamemodes:/home/steam/server/garrysmod/gamemodes
-      - /mnt/vol/garrysmod/breach-brasil/lua:/home/steam/server/garrysmod/lua
-      - /mnt/vol/garrysmod/breach-brasil/maps:/home/steam/server/garrysmod/maps
-      - /mnt/vol/garrysmod/breach-brasil/sv.db:/home/steam/server/garrysmod/sv.db
-    command: [
-      "/bin/bash", "/home/steam/start.sh"
-    ]
+    # volumes:
+    #   - /mnt/vol/garrysmod/breach-brasil/addons:/home/steam/server/garrysmod/addons
+    #   - /mnt/vol/garrysmod/breach-brasil/cfg:/home/steam/server/garrysmod/cfg
+    #   - /mnt/vol/garrysmod/breach-brasil/cfg/mount.cfg:/home/steam/server/garrysmod/cfg/mount.cfg
+    #   - /mnt/vol/garrysmod/breach-brasil/cfg/server.cfg:/home/steam/server/garrysmod/cfg/server.cfg
+    #   - /mnt/vol/garrysmod/breach-brasil/data:/home/steam/server/garrysmod/data
+    #   - /mnt/vol/garrysmod/breach-brasil/gamemodes:/home/steam/server/garrysmod/gamemodes
+    #   - /mnt/vol/garrysmod/breach-brasil/lua:/home/steam/server/garrysmod/lua
+    #   - /mnt/vol/garrysmod/breach-brasil/maps:/home/steam/server/garrysmod/maps
+    #   - /mnt/vol/garrysmod/breach-brasil/sv.db:/home/steam/server/garrysmod/sv.db
+    command: [ "/bin/bash", "/home/steam/start.sh" ]
