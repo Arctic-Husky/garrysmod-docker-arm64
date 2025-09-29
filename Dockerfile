@@ -6,20 +6,20 @@ USER root
 
 RUN dpkg --add-architecture i386 && apt-get update \
   && DEBIAN_FRONTEND=noninteractive apt-get install -y \
-    wget \
-    ca-certificates \
-    tar \
-    gcc \
-    g++ \
-    libgcc1 \
-    libssl3 \
-    libtinfo5 \
-    libbz2-1.0:i386 \
-    gdb \
-    libsdl1.2debian \
-    libfontconfig \
-    unzip \
-    net-tools \
+  wget \
+  ca-certificates \
+  tar \
+  gcc \
+  g++ \
+  libgcc1 \
+  libssl3 \
+  libtinfo5 \
+  libbz2-1.0:i386 \
+  gdb \
+  libsdl1.2debian \
+  libfontconfig \
+  unzip \
+  net-tools \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
@@ -28,12 +28,6 @@ USER steam
 # DOWNLOAD GMOD SERVER
 COPY assets/update.txt ${HOMEDIR}/update.txt
 RUN ${STEAMCMDDIR}/steamcmd.sh +runscript ${HOMEDIR}/update.txt +quit
-
-# # SETUP BINARIES FOR x32 and x64 bits
-# RUN mkdir -p /home/steam/.steam/sdk32 \
-#     && cp -v /home/steam/steamcmd/linux32/steamclient.so /home/steam/.steam/sdk32/steamclient.so \
-#     && mkdir -p /home/steam/.steam/sdk64 \
-#     && cp -v /home/steam/steamcmd/linux64/steamclient.so /home/steam/.steam/sdk64/steamclient.so
 
 # # SETUP CSS CONTENT
 # RUN ${STEAMCMDDIR}/steamcmd.sh +force_install_dir ${HOMEDIR}/temp \
@@ -82,7 +76,7 @@ RUN chmod +x ${HOMEDIR}/start.sh
 COPY --chown=steam:steam assets/health.sh ${HOMEDIR}/health.sh
 RUN chmod +x ${HOMEDIR}/health.sh
 HEALTHCHECK --start-period=10s \
-    CMD ${HOMEDIR}/health.sh
+  CMD ${HOMEDIR}/health.sh
 
 # ADD WRAPPER SCRIPT
 COPY --chown=steam:steam assets/srcds_box64_wrapper ${HOMEDIR}/server/srcds_box64_wrapper
