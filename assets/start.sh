@@ -29,6 +29,8 @@ echo "Starting server on ${MODE} mode..."
 
 echo | pwd
 
+export LD_LIBRARY_PATH=".:/home/steam/steamcmd/linux64/:bin/linux64:$LD_LIBRARY_PATH"
+
 # Explicitly quote every variable and expand ARGS as array
 exec "/home/steam/server/srcds_run_x64" \
     -game "garrysmod" \

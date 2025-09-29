@@ -5,7 +5,7 @@ services:
     image: arctichusky/garrysmod-docker-arm64:0.1
     tty: true
     stdin_open: true
-    #network_mode: host
+    network_mode: host
     ports:
       - "27005:27005/udp"
       - "27015:27015"
