@@ -4,4 +4,4 @@ echo "EXECUTANDO SRCDS PELO WRAPPER"
 
 echo | pwd
 
-exec box86 srcds_linux "$@"
+exec box64 srcds_linux "$@"

@@ -20,7 +20,6 @@ RUN dpkg --add-architecture i386 && apt-get update \
   libfontconfig \
   unzip \
   net-tools \
-  libtinfo5 \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
