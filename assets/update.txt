@@ -1,4 +1,4 @@
-@ShutdownOnFailedCommand 0
+@ShutdownOnFailedCommand 1
 @NoPromptForPassword 1
 
 force_install_dir /home/steam/server
