@@ -11,10 +11,10 @@ services:
       - "27015:27015"
       - "27015:27015/udp"
     environment:
-      - GAMEMODE=${GAMEMODE}
-      - MAP=${MAP}
-      - MAXPLAYERS=${MAXPLAYERS}
-      - PORT=${PORT}
+      # - GAMEMODE=${GAMEMODE}
+      # - MAP=${MAP}
+      # - MAXPLAYERS=${MAXPLAYERS}
+      # - PORT=${PORT}
       - NAME=${NAME}
       - GSLT=${GSLT}
       - PRODUCTION=${PRODUCTION}
