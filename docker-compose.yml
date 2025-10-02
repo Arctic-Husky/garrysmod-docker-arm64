@@ -5,7 +5,9 @@ services:
     image: arctichusky/garrysmod-docker-arm64:0.1
     tty: true
     stdin_open: true
-    network_mode: host
+    networks:
+      containers:
+        ipv4_address: 10.90.0.27
     ports:
       - "27005:27005/udp"
       - "27015:27015"
@@ -30,3 +32,7 @@ services:
     #   - /mnt/vol/garrysmod/breach-brasil/maps:/home/steam/server/garrysmod/maps
     #   - /mnt/vol/garrysmod/breach-brasil/sv.db:/home/steam/server/garrysmod/sv.db
     command: [ "/bin/bash", "/home/steam/start.sh" ]
+
+networks:
+  containers:
+    external: true
