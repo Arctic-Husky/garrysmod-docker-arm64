@@ -13,14 +13,13 @@ RUN dpkg --add-architecture i386 && apt-get update \
   g++ \
   libgcc1 \
   libssl3 \
+  libtinfo5 \
+  libbz2-1.0:i386 \
   gdb \
   libsdl1.2debian \
   libfontconfig \
   unzip \
   net-tools \
-  lib32z1:i386 libncurses5:i386 libbz2-1.0:i386 \
-  lib32gcc-s1:i386 lib32stdc++6:i386  libtinfo5:i386 \
-  libcurl3-gnutls:i386 libsdl2-2.0-0:i386 \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
