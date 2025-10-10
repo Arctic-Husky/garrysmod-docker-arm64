@@ -22,7 +22,7 @@ if [ -n "${PRODUCTION:-}" ] && [ "${PRODUCTION}" -ne 0 ]; then
     BASE_ARGS=( -disableluarefresh )
 else
     MODE="development"
-    BASE_ARGS=( -gdb gdb -debug )
+    BASE_ARGS=( -gdb gdb -debug -debuglog "/home/steam/Steam/logs/debug.log" )
 fi
 
 echo "Starting server on ${MODE} mode..."
